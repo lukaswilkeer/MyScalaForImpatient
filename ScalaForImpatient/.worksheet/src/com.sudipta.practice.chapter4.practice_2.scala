@@ -6,9 +6,11 @@ object practice_2 {;import org.scalaide.worksheet.runtime.library.WorksheetSuppo
   val myTuple = ("Sudipta","Deb","Switzerland",1234);System.out.println("""myTuple  : (String, String, String, Int) = """ + $show(myTuple ));$skip(13); val res$0 = 
   myTuple._2;System.out.println("""res0: String = """ + $show(res$0));$skip(13); val res$1 = 
   myTuple._4;System.out.println("""res1: Int = """ + $show(res$1));$skip(47); 
-  val (first, second, third, fourth) = myTuple;System.out.println("""first  : String = """ + $show(first ));System.out.println("""second  : String = """ + $show(second ));System.out.println("""third  : String = """ + $show(third ));System.out.println("""fourth  : Int = """ + $show(fourth ));$skip(121); 
+  val (first, second, third, fourth) = myTuple;System.out.println("""first  : String = """ + $show(first ));System.out.println("""second  : String = """ + $show(second ));System.out.println("""third  : String = """ + $show(third ));System.out.println("""fourth  : Int = """ + $show(fourth ));$skip(295); 
+  
   //I am not sure why this is not working. Let me ask the question in Stackoverflow
-  val (first1, second1, _) = myTuple;System.out.println("""first1  : <error> = """ + $show(first1 ));System.out.println("""second1  : <error> = """ + $show(second1 ));$skip(63); 
+  //Here is the link: http://stackoverflow.com/questions/18559511/tuples-in-scala-not-working-as-expected
+  //val (first1, second1, _) = myTuple
   
   val stringPattern = "My Switzerland".partition(_.isUpper);System.out.println("""stringPattern  : (String, String) = """ + $show(stringPattern ));$skip(60); 
   println("Upper Case Characters are: " + stringPattern._1);$skip(60); 
