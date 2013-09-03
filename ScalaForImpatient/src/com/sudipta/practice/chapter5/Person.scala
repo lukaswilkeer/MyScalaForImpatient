@@ -1,7 +1,6 @@
 package com.sudipta.practice.chapter5
 
 class Person {
-	//var age = 0
 	private var privateAge = 0
 	private val privateName = "Sudipta Deb"
 	
