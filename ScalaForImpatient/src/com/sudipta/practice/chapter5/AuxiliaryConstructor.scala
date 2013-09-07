@@ -50,7 +50,7 @@ object Test extends App{
   myTestObject.printObject
   
   println("-----------------------------------------")
-  println("Now phone is Object Private.. Let's check")
+  println("Now phone is Object Private field.. Let's check")
   val firstObject = new AuxiliaryConstructor("Sudipta",29,1234)
   val secondObject = new AuxiliaryConstructor("Adih",29,8989)
   
