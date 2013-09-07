@@ -2,29 +2,28 @@ package com.sudipta.practice.chapter5
 
 import scala.beans.BeanProperty
 
-class AuxiliaryConstructor(val name: String = "", private var age: Int = 0) {
-  //No need of Auxiliary Constructor as default value can be given in the primary constructor only
-  /*//Defining Auxiliary Constructor
-  def this(name: String){
-    this() //It is calling the Primary Constructor
-    this.name = name
-  }
-  
-  def this(name: String, age: Int){
-    this(name)
-    this.setAge(age)
-  }*/
+class AuxiliaryConstructor(val name: String = "", private var age: Int = 0, phone: Int = 0) {
   
   //The below statement will be executed every time Primary Constructor is getting called
   println("New Object is created")
   
   def printObject(){
-    println("Name: " + name + " Age: " + age)
+    println("Name: " + name + " Age: " + age + "Phone: " + phone)
   }
   
   def changeAge(age: Int) = if (age < this.age) println("Opps!! Want to be younger!! Sorry that is not possible") else {
     println("Now looks fine")
     this.age = age
+  }
+  
+  def compareWithEachOther(otherObject: AuxiliaryConstructor) = {
+    //Compare based on name
+    if(this.name == otherObject.name) println("Names are equal") else println("Names are different")
+    
+    //Compare based on age
+    if(this.age == otherObject.age) println("Both are of same age") else println("Both are of different age")
+    
+    //Compare based of phone is not possible as phone is Object private
   }
   
 }
@@ -50,5 +49,10 @@ object Test extends App{
   myTestObject.changeAge(30)
   myTestObject.printObject
   
+  println("-----------------------------------------")
+  println("Now phone is Object Private.. Let's check")
+  val firstObject = new AuxiliaryConstructor("Sudipta",29,1234)
+  val secondObject = new AuxiliaryConstructor("Adih",29,8989)
   
+  firstObject.compareWithEachOther(secondObject)
 }
