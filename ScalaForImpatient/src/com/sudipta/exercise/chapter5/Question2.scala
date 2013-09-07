@@ -1,11 +1,11 @@
 package com.sudipta.exercise.chapter5
 
-class BankAccount(private var balance: Int = 500) {
-	def deposit(amount: Int) = {
+class BankAccount(private var balance: Double = 500) {
+	def deposit(amount: Double) = {
 	  balance += amount
 	}
 	
-	def withdraw(amount: Int) = {
+	def withdraw(amount: Double) = {
 	  if(amount > balance){
 	    println("Sorry you don't have enough money")
 	  }else{
