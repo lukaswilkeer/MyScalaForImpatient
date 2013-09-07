@@ -2,27 +2,24 @@ package com.sudipta.practice.chapter5
 
 import scala.beans.BeanProperty
 
-class AuxiliaryConstructor() {
-  @BeanProperty //The below declaration will fail because @BeanProperty can be applied only to non-private member variables
-  //private var name = ""
-  var name = ""
-
-  @BeanProperty
-  var age = 0
-  
-  //Defining Auxiliary Constructor
+class AuxiliaryConstructor(val name: String = "", val age: Int = 0) {
+  //No need of Auxiliary Constructor as default value can be given in the primary constructor only
+  /*//Defining Auxiliary Constructor
   def this(name: String){
     this() //It is calling the Primary Constructor
-    this.setName(name)
+    this.name = name
   }
   
   def this(name: String, age: Int){
     this(name)
     this.setAge(age)
-  }
+  }*/
+  
+  //The below statement will be executed every time Primary Constructor is getting called
+  println("New Object is created")
   
   def printObject(){
-    println("Name: " + this.getName + " Age: " + this.getAge)
+    println("Name: " + name + " Age: " + age)
   }
 }
 
